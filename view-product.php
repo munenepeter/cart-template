@@ -1,3 +1,15 @@
+<?php
+//check if the product is set
+
+if(!isset($_GET['id']) || empty($_GET['id'])){
+    header("Location:index.php");
+}
+$product_id = (int)$_GET['id'];
+
+//$product = queryDB("SELECT `name`, `price`, `qty`, `` FROM products WHERE `id` = ?", $product_id);
+
+?>
+
 <?php include_once 'includes/base.php';?>
 
     <!-- Products-->
@@ -6,7 +18,7 @@
             <div class="lg:w-4/5 mx-auto flex flex-wrap bg-white p-2 rounded-md">
                 <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0 p-2">
                     <h2 class="text-sm title-font text-gray-500 tracking-widest">BRAND NAME</h2>
-                    <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">Animated Night Hill Illustrations
+                    <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">Product #<?=$product_id; ?>
                     </h1>
                     <div class="mb-4">
                         <a
